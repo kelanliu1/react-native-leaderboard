@@ -70,6 +70,7 @@ export default class Leaderboard extends Component {
             <Avatar
             label={item[this.props.labelBy]}
             style={[styles.rank, this.props.rankStyle]}
+            color='#d8fcf7'
             />
           </View>
           
