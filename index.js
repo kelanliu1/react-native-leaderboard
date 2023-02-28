@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Avatar } from '@react-native-material/core';
+
 import {
   FlatList,
   Image,
@@ -64,6 +66,13 @@ export default class Leaderboard extends Component {
               style={[styles.avatar, this.props.avatarStyle]}
             />
           )}
+          <View>
+            <Avatar
+            label={item[this.props.labelBy]}
+            style={[styles.rank, this.props.rankStyle]}
+            />
+          </View>
+          
           <Text style={[styles.label, this.props.labelStyle]} numberOfLines={1}>
             {item[this.props.labelBy]}
           </Text>
@@ -166,7 +175,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const _sort = (data, sortBy, sort) => {
+_sort = (data, sortBy, sort) => {
   if (sort) {
     return sort(data);
   } else if (typeof data === "object") {
